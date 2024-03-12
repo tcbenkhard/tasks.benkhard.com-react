@@ -1,0 +1,30 @@
+.taskview {
+
+  &:not(:last-child) {
+    border-bottom: 1px solid lighten(black, 90%);
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &--title {
+      flex-grow: 1;
+    }
+
+    &--score {
+      font-size: 0.8em;
+      border-radius: 10em;
+      padding: 3px;
+      background-color: lightblue;
+      align-content: center;
+    }
+  }
+
+  &-body {
+    color: lighten(black, 50%);
+    padding-bottom: 0.5em;
+  }
+}

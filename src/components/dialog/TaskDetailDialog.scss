@@ -1,0 +1,34 @@
+.task-dialog {
+  &-header {
+    padding-bottom: 1em;
+    font-size: 1.5em;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    &--stats {
+
+    }
+
+    &--control {
+      display: flex;
+      flex-direction: row-reverse;
+
+      & button {
+        color: black;
+        border-radius: 100em;
+        background-color: lightgreen;
+        padding: 0.5em;
+        text-decoration: none;
+
+        &:hover {
+          color: black;
+          background-color: darken(lightgreen, 15%);
+        }
+      }
+    }
+  }
+}

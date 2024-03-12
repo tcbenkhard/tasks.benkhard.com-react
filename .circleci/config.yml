@@ -1,0 +1,43 @@
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
+version: 2.1
+
+orbs:
+  aws-cli: circleci/aws-cli@2.0.3
+
+commands:
+  build:
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run build
+  deploy:
+    steps:
+      - run: cd cdk; npm install; npm run deploy
+
+jobs:
+  build:
+    docker:
+      - image: tcbenkhard/node20-cdk:latest
+    environment:
+      REACT_APP_MEALS_API_ENDPOINT=https://i3h1u6j7f0.execute-api.eu-west-1.amazonaws.com/prod
+    steps:
+      - build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  deploy:
+    docker:
+      - image: tcbenkhard/node20-cdk:latest
+    steps:
+      - attach_workspace:
+          at: .
+      - deploy
+
+workflows:
+  build:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build

@@ -1,0 +1,9 @@
+$text-color: black;
+$text-faint-color: lighten($text-color, 50%);
+
+.App {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
