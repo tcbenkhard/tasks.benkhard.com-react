@@ -2,7 +2,7 @@ import {TaskListView} from "../components/TaskListView";
 import {TaskList} from "../model/TaskList";
 import './OverviewPage.scss'
 import {Task} from "../model/Task";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useState} from "react";
 import {TaskDetailsDialog} from "../components/dialog/TaskDetailsDialog";
 
 const lists: Array<TaskList> = [{
