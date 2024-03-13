@@ -27,7 +27,7 @@ export const TaskListView = ({list, onSelectTask}: TaskListProps) => {
             console.log('received tasks: ', tasks)
             setTasks(list.tasks.sort(sortByScore))
         })
-    }, [list, tasks]);
+    }, [list, setTasks]);
 
 
     return (
