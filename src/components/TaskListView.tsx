@@ -24,7 +24,7 @@ export const TaskListView = ({list, onSelectTask}: TaskListProps) => {
 
     useEffect(() => {
         taskClient.getList(list.id).then((list) => {
-            console.log('received tasks: ', tasks)
+            console.log('received tasks: ', list.tasks)
             setTasks(list.tasks.sort(sortByScore))
         })
     }, [list, setTasks]);
