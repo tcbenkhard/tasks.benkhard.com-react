@@ -37,7 +37,7 @@ export const App = () => {
                     })
                     window.localStorage.setItem('taskAuthToken', JSON.stringify(auth))
                 })
-                .catch(error => console.log(`Login failed: ${error}`))
+                .catch(error => setError(error))
         },
         [setAuthToken],
     );

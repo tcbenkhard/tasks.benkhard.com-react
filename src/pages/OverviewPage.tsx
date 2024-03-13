@@ -26,13 +26,13 @@ export const OverviewPage = () => {
         [],
     );
 
-    useEffect(reload, []);
+    useEffect(reload, [reload]);
 
     const handleCompleteClicked = useCallback(() => {
         taskClient.completeTask(selectedTask!.listId, selectedTask!.id)
             .then(() => setSelectedTask(undefined))
             .then(() => reload())
-    }, [selectedTask])
+    }, [selectedTask, reload])
 
     const onSelectTask = useCallback(
         (task: Task) => {

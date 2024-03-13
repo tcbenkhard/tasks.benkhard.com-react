@@ -9,8 +9,6 @@ export const LoginPage = ({onLoginClicked, errorText}: LoginPageProps) => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
-
-
     return (
         <div className={'loginpage'}>
             <div className="loginpage-header">

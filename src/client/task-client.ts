@@ -1,6 +1,5 @@
 import {AuthenticateResponse} from "./authenticate-response";
 import {TaskList} from "./task-list";
-import {Task} from "./task";
 
 export class ApiError extends Error {
     errorCode: string
