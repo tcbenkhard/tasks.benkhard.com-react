@@ -1,5 +1,6 @@
 export interface Task {
     id: string,
+    listId: string,
     title: string,
     description: string,
     priority: number,

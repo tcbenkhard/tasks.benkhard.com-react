@@ -1,5 +1,5 @@
 import './TaskView.scss'
-import {Task} from "../model/Task";
+import {Task} from "../client/task";
 
 export interface TaskViewProps {
     task: Task,

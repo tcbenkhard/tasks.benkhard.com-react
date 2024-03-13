@@ -1,5 +1,5 @@
 import {Dialog} from "./Dialog";
-import {Task} from "../../model/Task";
+import {Task} from "../../client/task";
 import './TaskDetailDialog.scss'
 import {Stat} from "../Stat";
 import {DateTime} from 'luxon'
@@ -7,9 +7,10 @@ import {DateTime} from 'luxon'
 export interface TaskDetailsDialogProps {
     onCloseDialog: () => void
     task: Task
+    onCompleteClicked: () => void
 }
 
-export const TaskDetailsDialog = ({onCloseDialog, task}: TaskDetailsDialogProps) => {
+export const TaskDetailsDialog = ({onCloseDialog, task, onCompleteClicked}: TaskDetailsDialogProps) => {
     return (
         <Dialog onClickOutside={onCloseDialog}>
             <div className="task-dialog-header">
@@ -28,7 +29,7 @@ export const TaskDetailsDialog = ({onCloseDialog, task}: TaskDetailsDialogProps)
                     {task.description}
                 </div>
                 <div className="task-dialog-body--control">
-                    <button>Complete</button>
+                    <button onClick={onCompleteClicked}>Complete</button>
                 </div>
             </div>
         </Dialog>
